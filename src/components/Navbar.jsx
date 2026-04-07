@@ -56,7 +56,7 @@ const [visible,setvisible]=useState(false);
             alt="Cart"
             className="w-5 cursor-pointer"
           />
-          <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 aspect-square rounded-full text-[8px] text-white bg-black">
+          <p className="absolute `bottom-[-5px]`  w-4 text-center leading-4 aspect-square rounded-full text-[8px] text-white bg-black">
             10
           </p>
         </Link>
