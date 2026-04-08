@@ -14,4 +14,10 @@ a.active hr{
 *{
     font-family: 'Roboto', sans-serif;
 }
-
+@media (max-width:640px) {
+  a.active{
+    background-color: #000;
+    color: aliceblue;
+  }
+  
+}
