@@ -1,6 +1,6 @@
 
 import { useContext } from 'react';
-import { ShopContext } from '../context/ShopCOntext';
+import { ShopContext } from '../context/ShopContext.jsx';
 import { Link } from 'react-router-dom';
 
 const ProductItem = ({id,image,name ,price}) => {
@@ -9,7 +9,7 @@ const ProductItem = ({id,image,name ,price}) => {
   return (
     <Link className='text-gray cursor-pointer mx-auto' to={`/product/${id}`}>
       <div className='overflow-hidden'>
-        <img className='hover transition ease-in-out' src={image[0]} alt="" />
+        <img className='hover:scale-150 transition ease-in-out' src={image[0]} alt="" />
       </div>
       <p className='py-3 text-sm'>{name}</p>
       <p className='font-bold text-lg'> {currency}{price}</p>
