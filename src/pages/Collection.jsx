@@ -9,13 +9,13 @@ import ProductItem from "../components/ProductItem";
 const Collection = () => {
   const { products } = useContext(ShopContext);
   const [showFilter, setShowFilter] = useState(false);
-  const [filterProducts, setFIlterProducts] = useState([]);
+  const [filterProducts, setFilterProducts] = useState([]);
 
-  const [Category, setCategory] = useState([]);
+  const [category, setCategory] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
 
   const toggleCategory = (e) => {
-    if (Category.includes(e.target.value)) {
+    if (category.includes(e.target.value)) {
       setCategory((prev) => prev.filter((item) => item !== e.target.value));
     } else {
       setCategory((prev) => [...prev, e.target.value]);
@@ -29,9 +29,25 @@ const Collection = () => {
       setSubCategory((prev) => [...prev, e.target.value]);
     }
   };
+  
+  const applyFilter=()=>{
+
+    let productCopy = products.slice();
+     if(category.length > 0){
+         productCopy = productCopy.filter(item=>category.includes(item.category));
+
+     }
+     setFilterProducts(productCopy);
+    
+  }
+
   useEffect(() => {
-    setFIlterProducts(products);
+    setFilterProducts(products);
   }, []);
+
+  useEffect(()=>{
+    applyFilter();
+  },[category,subCategory])
 
   return (
     <div className=" flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t  ">
