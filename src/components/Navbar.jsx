@@ -33,7 +33,12 @@ const [visible,setvisible]=useState(false);
       </ul>
       <div className="flex items-center gap-6">
         <img
-         onClick={() => setShowSearch(!showSearch)}
+         onClick={() => 
+          
+          
+          setShowSearch(!showSearch)
+        }
+
           src={assets.search_icon}
           alt="Search"
           className="w-5 cursor-pointer"

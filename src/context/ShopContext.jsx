@@ -3,7 +3,7 @@ import { products } from "../assets/assets";
 import { useState } from "react";
 
 export const ShopContext = createContext();
-
+// contain all the global states and functions related to the shop
 const ShopContextProvider = (props) => {
   const currency = "PKR";
   const deliveryfee = 500;
