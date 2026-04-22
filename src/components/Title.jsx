@@ -3,8 +3,8 @@ import React from 'react'
 const Title = ({text1,text2}) => {
   return (
     <div className='inline-flex gap-2 items-center justify-center mb-3'>
-      <p className=" text-gray-600 text-sm md:text-base">
-        {text1} <span className='text-gray-800 font-medium'>{text2}</span>
+      <p className=" text-gray-600  text-xl md:text-base md:text-2xl">
+        {text1} <span className='text-gray-800 font-bold text-xl'>{text2}</span>
       </p>
       <p className="w-8 md:w-11 h-[2px] bg-gray-800"></p>
      
