@@ -3,7 +3,7 @@ import { assets } from "../assets/assets";
 const Hero = () => {
   return (
     <section className="mt-8">
-      <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-xl">
+      <div className="relative overflow-hidden rounded-3xl border border-2 hover:shadow-amber-50 border-gray-800 shadow-gray-700 bg-white shadow-xl">
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100" />
 
         <div className="relative grid grid-cols-1 sm:grid-cols-2 items-stretch">

@@ -27,7 +27,7 @@ const Navbar = () => {
 
         {/* pill nav (desktop) */}
         <div className="hidden sm:flex items-center justify-center flex-1 px-6">
-          <ul className="flex items-center gap-2 rounded-full border border-gray-200 bg-white/70 backdrop-blur-md shadow-md px-2 py-2">
+          <ul className="flex items-center gap-2 rounded-full border border-2 border-gray-400 bg-white/70 backdrop-blur-sm shadow-lg px-2 py-2">
             <li>
               <NavLink to="/" className={navLinkClass} end>
                 Home
