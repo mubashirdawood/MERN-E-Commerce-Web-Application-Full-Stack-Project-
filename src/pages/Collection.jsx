@@ -88,79 +88,81 @@ const Collection = () => {
         >
           FILTERS{" "}
           <img
-            className={`h-3 sm:hidden ${showFilter ? "rotate-90" : ""}`}
+            className={`h-3 sm:hidden transition-all duration-300 ${showFilter ? "rotate-90" : ""}`}
             src={assets.dropdown_icon}
             alt=""
           />
         </p>
-        {/* Category filters */}
-        <div
-          className={` border border-gray-700 pl-5 py-3 mt-6 ${showFilter ? "" : "hidden"} sm:block`}
-        >
-          <p className="mb-3 text-sm font-medium">CATEGORIES</p>
-          <div className="flex flex-col gap-2 text-sm font-light text-gray-500">
-            <p className="flex gap-2">
-              <input
-                type="checkbox"
-                className="w-3"
-                value={"Men"}
-                onChange={toggleCategory}
-              />
-              Men
-            </p>
-            <p className="flex gap-2">
-              <input
-                type="checkbox"
-                className="w-3"
-                value={"Women"}
-                onChange={toggleCategory}
-              />
-              Women
-            </p>
-            <p className="flex gap-2">
-              <input
-                type="checkbox"
-                className="w-3"
-                value={"Kids"}
-                onChange={toggleCategory}
-              />
-              Kids
-            </p>
+        <div className={`transition-all duration-300 overflow-hidden sm:block ${showFilter ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0 sm:max-h-[1000px] sm:opacity-100"}`}>
+          {/* Category filters */}
+          <div
+            className="border border-gray-700 pl-5 py-3 mt-6"
+          >
+            <p className="mb-3 text-sm font-medium">CATEGORIES</p>
+            <div className="flex flex-col gap-2 text-sm font-light text-gray-500">
+              <p className="flex gap-2">
+                <input
+                  type="checkbox"
+                  className="w-3"
+                  value={"Men"}
+                  onChange={toggleCategory}
+                />
+                Men
+              </p>
+              <p className="flex gap-2">
+                <input
+                  type="checkbox"
+                  className="w-3"
+                  value={"Women"}
+                  onChange={toggleCategory}
+                />
+                Women
+              </p>
+              <p className="flex gap-2">
+                <input
+                  type="checkbox"
+                  className="w-3"
+                  value={"Kids"}
+                  onChange={toggleCategory}
+                />
+                Kids
+              </p>
+            </div>
           </div>
-        </div>
-        {/* subcategory */}
-        <div
-          className={` border border-gray-700 pl-5 py-3 my-5 ${showFilter ? "" : "hidden"} sm:block`}
-        >
-          <p className="mb-3 text-sm font-medium">TYPES</p>
-          <div className="flex flex-col gap-2 text-sm font-light text-gray-500">
-            <p className="flex gap-2">
-              <input
-                type="checkbox"
-                className="w-3"
-                value={"Topwear"}
-                onChange={toggleSubCategory}
-              />
-              Topwear
-            </p>
-            <p className="flex gap-2">
-              <input
-                type="checkbox"
-                className="w-3"
-                value={"Bottomwear"}
-                onChange={toggleSubCategory}
-              />
-              Bottomwear
-            </p>
-            <p className="flex gap-2">
-              <input
-                type="checkbox"
-                className="w-3"
-                value={"Winterwear"}
-                onChange={toggleSubCategory}
-              />
-              Winterwear
-            </p>
+          {/* subcategory */}
+          <div
+            className="border border-gray-700 pl-5 py-3 my-5"
+          >
+            <p className="mb-3 text-sm font-medium">TYPES</p>
+            <div className="flex flex-col gap-2 text-sm font-light text-gray-500">
+              <p className="flex gap-2">
+                <input
+                  type="checkbox"
+                  className="w-3"
+                  value={"Topwear"}
+                  onChange={toggleSubCategory}
+                />
+                Topwear
+              </p>
+              <p className="flex gap-2">
+                <input
+                  type="checkbox"
+                  className="w-3"
+                  value={"Bottomwear"}
+                  onChange={toggleSubCategory}
+                />
+                Bottomwear
+              </p>
+              <p className="flex gap-2">
+                <input
+                  type="checkbox"
+                  className="w-3"
+                  value={"Winterwear"}
+                  onChange={toggleSubCategory}
+                />
+                Winterwear
+              </p>
+            </div>
           </div>
         </div>
       </div>
