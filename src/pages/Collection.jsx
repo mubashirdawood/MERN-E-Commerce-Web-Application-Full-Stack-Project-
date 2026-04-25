@@ -93,11 +93,11 @@ const Collection = () => {
             alt=""
           />
         </p>
-        <div className={`transition-all duration-300 overflow-hidden sm:block ${showFilter ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0 sm:max-h-[1000px] sm:opacity-100"}`}>
+        <div
+          className={`transition-all duration-300 overflow-hidden sm:block ${showFilter ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0 sm:max-h-[1000px] sm:opacity-100"}`}
+        >
           {/* Category filters */}
-          <div
-            className="border border-gray-700 pl-5 py-3 mt-6"
-          >
+          <div className="border border-gray-700 pl-5 py-3 mt-6">
             <p className="mb-3 text-sm font-medium">CATEGORIES</p>
             <div className="flex flex-col gap-2 text-sm font-light text-gray-500">
               <p className="flex gap-2">
@@ -130,9 +130,7 @@ const Collection = () => {
             </div>
           </div>
           {/* subcategory */}
-          <div
-            className="border border-gray-700 pl-5 py-3 my-5"
-          >
+          <div className="border border-gray-700 pl-5 py-3 my-5">
             <p className="mb-3 text-sm font-medium">TYPES</p>
             <div className="flex flex-col gap-2 text-sm font-light text-gray-500">
               <p className="flex gap-2">
@@ -170,14 +168,14 @@ const Collection = () => {
       {/* right side */}
 
       <div className="flex-1 ">
-        <div className="flex justify-between text-base sm:text-2xl mb-4">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center text-base md:text-2xl mb-4 gap-2 sm:gap-0">
           <Title text1={"ALL"} text2={"COLLECTIONS"}></Title>
           {/* SORT */}
           <select
             onChange={(e) => {
               setSortType(e.target.value);
             }}
-            className="border-2 border-gray-700 p-2 text-sm px-2"
+            className="border-2 border-gray-700 p-2 text-sm px-2 w-full sm:w-auto"
           >
             <option value="relevant">Relevant</option>
             <option value="low-high">Price: Low to High</option>
