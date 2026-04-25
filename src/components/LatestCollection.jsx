@@ -19,8 +19,7 @@ const LatestCollection = () => {
       <div className="py-8 text-4xl text-center">
         <Title  text1={"Latest"} text2={" Collection"}></Title>
         <p className="w-3/4 m-auto text-xs md:text-sm  text-shadow-gray-700">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
-          voluptate.
+          Discover the latest trends in our collection, featuring new arrivals that blend style and comfort. Shop now to stay ahead of the fashion curve with our fresh and exciting pieces.
         </p>
       </div>
       {/* render products */}
