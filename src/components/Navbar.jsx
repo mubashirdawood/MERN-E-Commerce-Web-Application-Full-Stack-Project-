@@ -52,73 +52,114 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-6">
-        <img
-          onClick={() => setShowSearch(!showSearch)}
-          src={assets.search_icon}
-          alt="Search"
-          className="w-5 cursor-pointer"
-        />
-        {/* <img src={assets.cart_icon} alt="Cart"  className='w-5 cursor-pointer'/> */}
-
-        <div className="group relative">
           <img
-            src={assets.profile_icon}
-            alt=""
+            onClick={() => setShowSearch(!showSearch)}
+            src={assets.search_icon}
+            alt="Search"
             className="w-5 cursor-pointer"
           />
-          <div className="group-hover:block hidden absolute right-0 text-gray-500 bg-gray-100 shadow-lg p-4 rounded-md">
-            <div className="flex flex-col gap-2 w-36 py-3">
-              <p className="cursor-pointer hover:text-black">My Profile</p>
-              <p className="cursor-pointer hover:text-black">Orders</p>
-              <p className="cursor-pointer hover:text-black">Logout</p>
+          {/* <img src={assets.cart_icon} alt="Cart"  className='w-5 cursor-pointer'/> */}
+
+          <div className="group relative">
+            <img
+              src={assets.profile_icon}
+              alt=""
+              className="w-5 cursor-pointer"
+            />
+            <div className="group-hover:block hidden absolute right-0 text-gray-500 bg-gray-100 shadow-lg p-4 rounded-md">
+              <div className="flex flex-col gap-2 w-36 py-3">
+                <p className="cursor-pointer hover:text-black">My Profile</p>
+                <p className="cursor-pointer hover:text-black">Orders</p>
+                <p className="cursor-pointer hover:text-black">Logout</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <Link to="/cart" className="relative">
+          <Link to="/cart" className="relative">
+            <img
+              src={assets.cart_icon}
+              alt="Cart"
+              className="w-5 cursor-pointer"
+            />
+            <p className="absolute -bottom-1 -right-2 w-4 text-center leading-4 aspect-square rounded-full text-[8px] text-white bg-black">
+              10
+            </p>
+          </Link>
+
           <img
-            src={assets.cart_icon}
-            alt="Cart"
-            className="w-5 cursor-pointer"
+            onClick={() => {
+              setvisible(true);
+            }}
+            src={assets.menu_icon}
+            className="w-5 cursor-pointer sm:hidden"
+            alt=""
           />
-          <p className="absolute -bottom-1 -right-2 w-4 text-center leading-4 aspect-square rounded-full text-[8px] text-white bg-black">
-            10
-          </p>
-        </Link>
 
-        <img
-          onClick={() => {
-            setvisible(true);
-          }}
-          src={assets.menu_icon}
-          className="w-5 cursor-pointer sm:hidden"
-          alt=""
-        />
-
-
-
-        {/* sidebar for small screen */}
-        <div
-          className={`absolute top-0 right-0 bottom-0 bg-white overflow-hidden transition-all ${
-            visible ? "w-full" : "w-0"
-          }`}
-        >
-        <div className="flex flex-col text-gray-700">
-          <div onClick={()=>{setvisible(false)}} className="flex items-center cursor-pointer gap-4 p-4 border-b">
-              <img className="h-4 rotate-180" src={assets.dropdown_icon} alt="" />
-              <p>Back</p>
+          {/* Sidebar for small screens */}
+          <div
+            className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 ${
+              visible ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
+            onClick={() => setvisible(false)}
+          ></div>
+          <div
+            className={`fixed top-0 right-0 bottom-0 z-50 bg-white overflow-hidden transition-transform duration-300 transform ${
+              visible ? "translate-x-0" : "translate-x-full"
+            }`}
+          >
+            <div className="flex flex-col text-gray-700 h-full">
+              <div
+                onClick={() => {
+                  setvisible(false);
+                }}
+                className="flex items-center cursor-pointer gap-4 p-4 border-b"
+              >
+                <img
+                  className="h-4 rotate-180"
+                  src={assets.dropdown_icon}
+                  alt="Close"
+                />
+                <p>Close</p>
+              </div>
+              <NavLink
+                onClick={() => {
+                  setvisible(false);
+                }}
+                className="py-3 pl-6 border-b"
+                to="/"
+                end
+              >
+                Home
+              </NavLink>
+              <NavLink
+                onClick={() => {
+                  setvisible(false);
+                }}
+                className="py-3 pl-6 border-b"
+                to="/collections"
+              >
+                Collections
+              </NavLink>
+              <NavLink
+                onClick={() => {
+                  setvisible(false);
+                }}
+                className="py-3 pl-6 border-b"
+                to="/contact"
+              >
+                Contact
+              </NavLink>
+              <NavLink
+                onClick={() => {
+                  setvisible(false);
+                }}
+                className="py-3 pl-6 border-b"
+                to="/about"
+              >
+                About
+              </NavLink>
+            </div>
           </div>
-          <NavLink onClick={()=>{setvisible(false)}} className="py-3 pl-6 border-b" to='/' end>Home</NavLink>
-          <NavLink onClick={()=>{setvisible(false)}} className="py-3 pl-6 border-b" to='/collections'>Collections</NavLink>
-          <NavLink onClick={()=>{setvisible(false)}} className="py-3 pl-6 border-b" to='/contact'>Contact</NavLink>
-          <NavLink onClick={()=>{setvisible(false)}} className="py-3 pl-6 border-b" to='/about'>About</NavLink>
-        </div>
-
-
-        </div>
-
-
-
         </div>
       </div>
     </div>
