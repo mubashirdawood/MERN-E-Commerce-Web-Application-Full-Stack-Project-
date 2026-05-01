@@ -8,7 +8,7 @@ const OurPolicy = () => {
 
     <div>
       <img src={assets.exchange_icon} className='w-12 m-auto mb-5' alt="" />
-      <p> Easy Exchange Policy</p>    
+      <p> Easy Exchange & Return Policy</p>    
     </div>
 
       <div>
