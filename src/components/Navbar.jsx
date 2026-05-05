@@ -26,7 +26,7 @@ const Navbar = () => {
             <img src={assets.logo} className="w-28 sm:w-36" alt="Logo" />
           </Link>
 
-          <div className="hidden sm:flex items-center justify-center flex-1 px-6">
+          <div className="hidden rounded-full sm:flex items-center justify-center flex-1 px-6">
             <ul className="flex items-center gap-4 rounded-full border-2 border-gray-400 bg-white/70 backdrop-blur-sm shadow-lg px-4 py-2">
               <li>
                 <NavLink to="/" className={navLinkClass} end>
