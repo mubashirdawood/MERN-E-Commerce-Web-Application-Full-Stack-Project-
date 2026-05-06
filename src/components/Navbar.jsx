@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="sticky top-0 z-50 py-5 bg-white shadow-md">
+      <div className="sticky top-0 z-50 py-5 bg-white shadow-md rounded-b-3xl">
         <div className="flex items-center justify-between font-medium px-4 sm:px-6">
           <Link to="/">
             <img src={assets.logo} className="w-28 sm:w-36" alt="Logo" />
