@@ -168,14 +168,14 @@ const Collection = () => {
       {/* right side */}
 
       <div className="flex-1 ">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center text-base md:text-2xl mb-4 gap-2 sm:gap-0">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center text-base md:text-2xl mb-6 gap-4 sm:gap-0">
           <Title text1={"ALL"} text2={"COLLECTIONS"}></Title>
           {/* SORT */}
           <select
             onChange={(e) => {
               setSortType(e.target.value);
             }}
-            className="border-2 border-gray-700 p-2 text-sm px-2 w-full sm:w-auto"
+            className="bg-linear-to-br from-gray-50 to-gray-100 border-2 border-gray-300 rounded-xl p-3 text-sm px-4 w-full sm:w-auto font-medium text-gray-800 shadow-sm hover:shadow-md transition-shadow focus:outline-none focus:ring-2 focus:ring-black cursor-pointer"
           >
             <option value="relevant">Relevant</option>
             <option value="low-high">Price: Low to High</option>
