@@ -79,16 +79,16 @@ const Collection = () => {
   }, [sortType]);
 
   return (
-    <div className=" flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t  ">
+    <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10">
       {/* filter options */}
-      <div className="min-w-60 ">
+      <div className="min-w-60">
         <p
           onClick={() => setShowFilter(!showFilter)}
-          className="my-2 text-xl flex items-center cursor-pointer gap-2"
+          className="my-2 text-2xl font-bold flex items-center cursor-pointer gap-2 text-gray-900"
         >
           FILTERS{" "}
           <img
-            className={`h-3 sm:hidden transition-all duration-300 ${showFilter ? "rotate-90" : ""}`}
+            className={`h-4 sm:hidden transition-all duration-300 ${showFilter ? "rotate-90" : ""}`}
             src={assets.dropdown_icon}
             alt=""
           />
@@ -97,69 +97,69 @@ const Collection = () => {
           className={`transition-all duration-300 overflow-hidden sm:block ${showFilter ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0 sm:max-h-[1000px] sm:opacity-100"}`}
         >
           {/* Category filters */}
-          <div className="border border-gray-700 pl-5 py-3 mt-6">
-            <p className="mb-3 text-sm font-medium">CATEGORIES</p>
-            <div className="flex flex-col gap-2 text-sm font-light text-gray-500">
-              <p className="flex gap-2">
+          <div className="bg-linear-to-br from-gray-50 to-gray-100 border-2 border-gray-300 rounded-xl pl-6 py-4 mt-6 shadow-sm hover:shadow-md transition-shadow">
+            <p className="mb-4 text-sm font-bold text-gray-800 uppercase tracking-wide">CATEGORIES</p>
+            <div className="flex flex-col gap-3 text-sm font-medium text-gray-700">
+              <label className="flex items-center gap-3 cursor-pointer hover:bg-white/50 p-2 rounded-lg transition-colors">
                 <input
                   type="checkbox"
-                  className="w-3"
+                  className="w-4 h-4 rounded border-gray-400 text-black focus:ring-2 focus:ring-black cursor-pointer"
                   value={"Men"}
                   onChange={toggleCategory}
                 />
-                Men
-              </p>
-              <p className="flex gap-2">
+                <span>Men</span>
+              </label>
+              <label className="flex items-center gap-3 cursor-pointer hover:bg-white/50 p-2 rounded-lg transition-colors">
                 <input
                   type="checkbox"
-                  className="w-3"
+                  className="w-4 h-4 rounded border-gray-400 text-black focus:ring-2 focus:ring-black cursor-pointer"
                   value={"Women"}
                   onChange={toggleCategory}
                 />
-                Women
-              </p>
-              <p className="flex gap-2">
+                <span>Women</span>
+              </label>
+              <label className="flex items-center gap-3 cursor-pointer hover:bg-white/50 p-2 rounded-lg transition-colors">
                 <input
                   type="checkbox"
-                  className="w-3"
+                  className="w-4 h-4 rounded border-gray-400 text-black focus:ring-2 focus:ring-black cursor-pointer"
                   value={"Kids"}
                   onChange={toggleCategory}
                 />
-                Kids
-              </p>
+                <span>Kids</span>
+              </label>
             </div>
           </div>
           {/* subcategory */}
-          <div className="border border-gray-700 pl-5 py-3 my-5">
-            <p className="mb-3 text-sm font-medium">TYPES</p>
-            <div className="flex flex-col gap-2 text-sm font-light text-gray-500">
-              <p className="flex gap-2">
+          <div className="bg-linear-to-br from-gray-50 to-gray-100 border-2 border-gray-300 rounded-xl pl-6 py-4 my-6 shadow-sm hover:shadow-md transition-shadow">
+            <p className="mb-4 text-sm font-bold text-gray-800 uppercase tracking-wide">TYPES</p>
+            <div className="flex flex-col gap-3 text-sm font-medium text-gray-700">
+              <label className="flex items-center gap-3 cursor-pointer hover:bg-white/50 p-2 rounded-lg transition-colors">
                 <input
                   type="checkbox"
-                  className="w-3"
+                  className="w-4 h-4 rounded border-gray-400 text-black focus:ring-2 focus:ring-black cursor-pointer"
                   value={"Topwear"}
                   onChange={toggleSubCategory}
                 />
-                Topwear
-              </p>
-              <p className="flex gap-2">
+                <span>Topwear</span>
+              </label>
+              <label className="flex items-center gap-3 cursor-pointer hover:bg-white/50 p-2 rounded-lg transition-colors">
                 <input
                   type="checkbox"
-                  className="w-3"
+                  className="w-4 h-4 rounded border-gray-400 text-black focus:ring-2 focus:ring-black cursor-pointer"
                   value={"Bottomwear"}
                   onChange={toggleSubCategory}
                 />
-                Bottomwear
-              </p>
-              <p className="flex gap-2">
+                <span>Bottomwear</span>
+              </label>
+              <label className="flex items-center gap-3 cursor-pointer hover:bg-white/50 p-2 rounded-lg transition-colors">
                 <input
                   type="checkbox"
-                  className="w-3"
+                  className="w-4 h-4 rounded border-gray-400 text-black focus:ring-2 focus:ring-black cursor-pointer"
                   value={"Winterwear"}
                   onChange={toggleSubCategory}
                 />
-                Winterwear
-              </p>
+                <span>Winterwear</span>
+              </label>
             </div>
           </div>
         </div>
