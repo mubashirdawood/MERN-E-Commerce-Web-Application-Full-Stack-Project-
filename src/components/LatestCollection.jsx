@@ -1,36 +1,40 @@
-import React from "react";
-import { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { ShopContext } from "../context/ShopContext.jsx";
 import Title from "./Title";
-import { useState, useEffect } from "react";
 import ProductItem from "./ProductItem";
 
 const LatestCollection = () => {
   const { products } = useContext(ShopContext);
-  const [LatestProducts, setLatestProducts]=useState([]);
+  const [latestProducts, setLatestProducts] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
+    if (products && products.length > 0) {
+      setLatestProducts(products.slice(0, 10));
+    }
+  }, [products]);
 
-    setLatestProducts(products.slice(0,10));
-    
-  },[])
   return (
-    <div className="my-10 ">
-      <div className="py-8 text-4xl text-center">
-        <Title  text1={"Latest"} text2={" Collection"}></Title>
-        <p className="w-3/4 m-auto text-xs md:text-sm  text-shadow-gray-700">
-          Discover the latest trends in our collection, featuring new arrivals that blend style and comfort. Shop now to stay ahead of the fashion curve with our fresh and exciting pieces.
+    <div className="my-20">
+      <div className="py-10 text-center">
+        <Title text1={"LATEST"} text2={"COLLECTION"} />
+        <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-500 max-w-2xl mt-4">
+          Explore our newest arrivals, curated with the latest trends and styles in mind. 
+          Fresh designs that bring together quality and modern aesthetics for your everyday wardrobe.
         </p>
       </div>
-      {/* render products */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4 gap-y-6">
-       {
-        LatestProducts.map((item, index)=>(
-          <ProductItem key={index} id={item._id} image={item.image} name={item.name} price={item.price} />
-        ))
-      }
-      </div>
 
+      {/* Product Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 lg:gap-8 px-4 sm:px-0">
+        {latestProducts.map((item, index) => (
+          <ProductItem
+            key={index}
+            _id={item._id}
+            image={item.image}
+            name={item.name}
+            price={item.price}
+          />
+        ))}
+      </div>
     </div>
   );
 };
