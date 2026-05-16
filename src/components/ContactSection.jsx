@@ -38,7 +38,8 @@ const ContactSection = () => {
           We'd love to hear from you
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-          Have a question or feedback? Send us a message and we'll respond as quickly as we can.
+          Have a question or feedback? Send us a message and we'll respond as
+          quickly as we can.
         </p>
       </div>
 
@@ -46,7 +47,9 @@ const ContactSection = () => {
         {/* Contact Information */}
         <div className="space-y-8">
           <div>
-            <h3 className="text-xl font-bold text-gray-900">Contact Information</h3>
+            <h3 className="text-xl font-bold text-gray-900">
+              Contact Information
+            </h3>
             <p className="mt-2 text-gray-600">
               Reach out to us through any of the following channels
             </p>
@@ -74,8 +77,12 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">Email</h4>
-                  <p className="mt-1 text-sm text-gray-600">support@ecommerce.com</p>
-                  <p className="text-xs text-gray-500">We'll respond within 24 hours</p>
+                  <p className="mt-1 text-sm text-gray-600">
+                    support@ecommerce.com
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    We'll respond within 24 hours
+                  </p>
                 </div>
               </div>
             </div>
@@ -100,7 +107,9 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">Phone</h4>
-                  <p className="mt-1 text-sm text-gray-600">+1 (555) 123-4567</p>
+                  <p className="mt-1 text-sm text-gray-600">
+                    +1 (555) 123-4567
+                  </p>
                   <p className="text-xs text-gray-500">Mon-Fri, 9am-5pm EST</p>
                 </div>
               </div>
@@ -135,7 +144,9 @@ const ContactSection = () => {
                   <p className="mt-1 text-sm text-gray-600">
                     123 Fashion Street, Style City, SC 12345
                   </p>
-                  <p className="text-xs text-gray-500">Visit us at our showroom</p>
+                  <p className="text-xs text-gray-500">
+                    Visit us at our showroom
+                  </p>
                 </div>
               </div>
             </div>
@@ -149,7 +160,8 @@ const ContactSection = () => {
           {submitted && (
             <div className="mt-4 rounded-xl bg-green-50 border border-green-200 p-4">
               <p className="text-sm font-medium text-green-800">
-                ✓ Thank you! We've received your message and will get back to you soon.
+                ✓ Thank you! We've received your message and will get back to
+                you soon.
               </p>
             </div>
           )}
@@ -157,7 +169,10 @@ const ContactSection = () => {
           <form onSubmit={handleSubmit} className="mt-6 space-y-5">
             {/* Name */}
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Full Name
               </label>
               <input
@@ -174,7 +189,10 @@ const ContactSection = () => {
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Email Address
               </label>
               <input
@@ -191,7 +209,10 @@ const ContactSection = () => {
 
             {/* Subject */}
             <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="subject"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Subject
               </label>
               <input
@@ -208,7 +229,10 @@ const ContactSection = () => {
 
             {/* Message */}
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Message
               </label>
               <textarea
