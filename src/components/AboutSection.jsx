@@ -11,32 +11,40 @@ const AboutSection = () => {
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             We build modern shopping experiences for every customer.
           </h2>
-          <p className="max-w-xl text-base leading-8 text-gray-600">
-            Our mission is to make shopping easy, beautiful, and reliable. We bring curated collections, fast delivery, and thoughtful service together in one place so you can discover what you love without the hassle.
-          </p>
+    
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md">
-              <h3 className="text-lg font-semibold text-gray-900">Quality-first products</h3>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Quality-first products
+              </h3>
               <p className="mt-2 text-sm text-gray-600">
                 Every item is selected for style, comfort and lasting value.
               </p>
             </div>
             <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md">
-              <h3 className="text-lg font-semibold text-gray-900">Fast & friendly support</h3>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Fast & friendly support
+              </h3>
               <p className="mt-2 text-sm text-gray-600">
                 We’re here to help you at every step, from browsing to delivery.
               </p>
             </div>
             <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md">
-              <h3 className="text-lg font-semibold text-gray-900">Trusted by shoppers</h3>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Trusted by shoppers
+              </h3>
               <p className="mt-2 text-sm text-gray-600">
-                Customers return for the ease of our store and the reliability of our service.
+                Customers return for the ease of our store and the reliability
+                of our service.
               </p>
             </div>
             <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md">
-              <h3 className="text-lg font-semibold text-gray-900">Style-driven collections</h3>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Style-driven collections
+              </h3>
               <p className="mt-2 text-sm text-gray-600">
-                Fresh arrivals and trending styles designed for real day-to-day wear.
+                Fresh arrivals and trending styles designed for real day-to-day
+                wear.
               </p>
             </div>
           </div>
@@ -45,17 +53,18 @@ const AboutSection = () => {
         <div className="relative overflow-hidden rounded-[2rem] bg-gray-100 p-5 shadow-xl">
           <div className="absolute inset-0 bg-gradient-to-br from-amber-200 via-white to-transparent opacity-90" />
           <div className="relative rounded-[1.75rem] overflow-hidden bg-white shadow-lg">
-            <img
-              src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=80"
-              alt="Shopping showcase"
-              className="h-80 w-full object-cover"
-            />
+         
           </div>
           <div className="mt-6 rounded-3xl bg-black/95 p-6 text-white shadow-xl backdrop-blur-xl">
-            <p className="text-sm uppercase tracking-[0.35em] text-amber-300">Our promise</p>
-            <h3 className="mt-3 text-2xl font-semibold">Timeless style with effortless shopping.</h3>
+            <p className="text-sm uppercase tracking-[0.35em] text-amber-300">
+              Our promise
+            </p>
+            <h3 className="mt-3 text-2xl font-semibold">
+              Timeless style with effortless shopping.
+            </h3>
             <p className="mt-4 text-sm leading-7 text-white/80">
-              From curated collections to fast delivery, we deliver a premium shopping experience for everyone.
+              From curated collections to fast delivery, we deliver a premium
+              shopping experience for everyone.
             </p>
           </div>
         </div>
