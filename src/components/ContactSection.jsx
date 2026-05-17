@@ -50,9 +50,7 @@ const ContactSection = () => {
             <h3 className="text-xl font-bold text-gray-900">
               Contact Information
             </h3>
-            <p className="mt-2 text-gray-600">
-              Reach out to us through any of the following channels
-            </p>
+           
           </div>
 
           {/* Contact Cards */}
