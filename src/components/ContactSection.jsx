@@ -76,7 +76,7 @@ const ContactSection = () => {
                 <div>
                   <h4 className="font-semibold text-gray-900">Email</h4>
                   <p className="mt-1 text-sm text-gray-600">
-                    support@ecommerce.com
+                    support@.com
                   </p>
                   <p className="text-xs text-gray-500">
                     We'll respond within 24 hours
@@ -106,14 +106,14 @@ const ContactSection = () => {
                 <div>
                   <h4 className="font-semibold text-gray-900">Phone</h4>
                   <p className="mt-1 text-sm text-gray-600">
-                    +1 (555) 123-4567
+                    +1  123-4567
                   </p>
                   <p className="text-xs text-gray-500">Mon-Fri, 9am-5pm EST</p>
                 </div>
               </div>
             </div>
 
-            {/* Address */}
+            
             <div className="rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-gray-50 p-6 shadow-sm transition hover:shadow-md">
               <div className="flex items-start gap-4">
                 <div className="rounded-lg bg-green-100 p-3">
