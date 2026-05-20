@@ -4,14 +4,23 @@ import Title from "./Title";
 import ProductItem from "./ProductItem";
 
 const LatestCollection = () => {
-  const { products } = useContext(ShopContext);
+  const { products, search, showSearch } = useContext(ShopContext);
   const [latestProducts, setLatestProducts] = useState([]);
 
   useEffect(() => {
     if (products && products.length > 0) {
-      setLatestProducts(products.slice(0, 10));
+      let filteredProducts = products.slice(0, 10);
+      
+      // Apply search filter
+      if (showSearch && search) {
+        filteredProducts = filteredProducts.filter((item) =>
+          item.name.toLowerCase().includes(search.toLowerCase())
+        );
+      }
+      
+      setLatestProducts(filteredProducts);
     }
-  }, [products]);
+  }, [products, search, showSearch]);
 
   return (
     <div className="my-20">
