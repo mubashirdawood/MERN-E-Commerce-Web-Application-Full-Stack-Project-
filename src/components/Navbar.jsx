@@ -65,10 +65,10 @@ const Navbar = () => {
                 alt="Profile"
                 className="w-5 cursor-pointer"
               />
-              <div className="group-hover:block hidden absolute right-0 text-gray-500 bg-gray-100 shadow-lg p-4 rounded-md">
+              <div className="group-hover:block hidden absolute right-0 text-gray-500 bg-gray-100 shadow-lg p-4 rounded-md z-50">
                 <div className="flex flex-col gap-2 w-36 py-3">
-                  <p className="cursor-pointer hover:text-black">My Profile</p>
-                  <p className="cursor-pointer hover:text-black">Orders</p>
+                  <Link to="/profile" className="cursor-pointer hover:text-black block">My Profile</Link>
+                  <Link to="/order" className="cursor-pointer hover:text-black block">Orders</Link>
                   <p className="cursor-pointer hover:text-black">Logout</p>
                 </div>
               </div>
