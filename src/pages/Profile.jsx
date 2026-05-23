@@ -42,7 +42,9 @@ const Profile = () => {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900">My Account</h1>
-          <p className="mt-2 text-gray-600">Manage your profile and preferences</p>
+          <p className="mt-2 text-gray-600">
+            Manage your profile and preferences
+          </p>
         </div>
 
         {/* Tabs */}
@@ -94,16 +96,24 @@ const Profile = () => {
                 <h2 className="text-2xl font-bold text-gray-900">
                   {profileData.firstName} {profileData.lastName}
                 </h2>
-                <p className="mt-1 text-sm text-gray-600">{profileData.email}</p>
+                <p className="mt-1 text-sm text-gray-600">
+                  {profileData.email}
+                </p>
               </div>
               <hr className="mb-6" />
               <div className="space-y-4">
                 <div>
-                  <p className="text-xs font-semibold uppercase text-gray-500">Phone</p>
-                  <p className="mt-1 text-sm text-gray-900">{profileData.phone}</p>
+                  <p className="text-xs font-semibold uppercase text-gray-500">
+                    Phone
+                  </p>
+                  <p className="mt-1 text-sm text-gray-900">
+                    {profileData.phone}
+                  </p>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase text-gray-500">Member Since</p>
+                  <p className="text-xs font-semibold uppercase text-gray-500">
+                    Member Since
+                  </p>
                   <p className="mt-1 text-sm text-gray-900">January 2024</p>
                 </div>
               </div>
@@ -113,7 +123,9 @@ const Profile = () => {
             <div className="lg:col-span-2">
               <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
                 <div className="mb-6 flex items-center justify-between">
-                  <h3 className="text-2xl font-bold text-gray-900">Personal Information</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    Personal Information
+                  </h3>
                   <button
                     onClick={() => setIsEditing(!isEditing)}
                     className="rounded-lg bg-black px-4 py-2 text-sm font-semibold text-white hover:bg-gray-900 transition-colors"
@@ -131,7 +143,9 @@ const Profile = () => {
                       <input
                         type="text"
                         name="firstName"
-                        value={isEditing ? formData.firstName : profileData.firstName}
+                        value={
+                          isEditing ? formData.firstName : profileData.firstName
+                        }
                         onChange={handleInputChange}
                         disabled={!isEditing}
                         className={`mt-2 w-full rounded-lg border border-gray-300 px-4 py-2 text-sm ${
@@ -148,7 +162,9 @@ const Profile = () => {
                       <input
                         type="text"
                         name="lastName"
-                        value={isEditing ? formData.lastName : profileData.lastName}
+                        value={
+                          isEditing ? formData.lastName : profileData.lastName
+                        }
                         onChange={handleInputChange}
                         disabled={!isEditing}
                         className={`mt-2 w-full rounded-lg border border-gray-300 px-4 py-2 text-sm ${
@@ -161,7 +177,9 @@ const Profile = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700">Email</label>
+                    <label className="block text-sm font-semibold text-gray-700">
+                      Email
+                    </label>
                     <input
                       type="email"
                       name="email"
@@ -177,7 +195,9 @@ const Profile = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700">Phone</label>
+                    <label className="block text-sm font-semibold text-gray-700">
+                      Phone
+                    </label>
                     <input
                       type="tel"
                       name="phone"
@@ -219,17 +239,30 @@ const Profile = () => {
         {/* Orders Tab */}
         {activeTab === "orders" && (
           <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
-            <h3 className="mb-6 text-2xl font-bold text-gray-900">Recent Orders</h3>
+            <h3 className="mb-6 text-2xl font-bold text-gray-900">
+              Recent Orders
+            </h3>
             <div className="space-y-4">
               {[1, 2, 3].map((order) => (
-                <div key={order} className="flex items-center justify-between border-b border-gray-200 pb-4 last:border-b-0">
+                <div
+                  key={order}
+                  className="flex items-center justify-between border-b border-gray-200 pb-4 last:border-b-0"
+                >
                   <div>
-                    <p className="font-semibold text-gray-900">Order #{12345 + order}</p>
-                    <p className="text-sm text-gray-600">Placed on May {order}, 2024</p>
+                    <p className="font-semibold text-gray-900">
+                      Order #{12345 + order}
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      Placed on May {order}, 2024
+                    </p>
                   </div>
                   <div className="text-right">
-                    <p className="font-semibold text-gray-900">PKR {3500 + order * 1000}</p>
-                    <p className="text-sm text-green-600 font-medium">Delivered</p>
+                    <p className="font-semibold text-gray-900">
+                      PKR {3500 + order * 1000}
+                    </p>
+                    <p className="text-sm text-green-600 font-medium">
+                      Delivered
+                    </p>
                   </div>
                 </div>
               ))}
@@ -241,7 +274,9 @@ const Profile = () => {
         {activeTab === "addresses" && (
           <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
             <div className="mb-6 flex items-center justify-between">
-              <h3 className="text-2xl font-bold text-gray-900">Saved Addresses</h3>
+              <h3 className="text-2xl font-bold text-gray-900">
+                Saved Addresses
+              </h3>
               <button className="rounded-lg bg-black px-4 py-2 text-sm font-semibold text-white hover:bg-gray-900 transition-colors">
                 + Add Address
               </button>
@@ -250,15 +285,24 @@ const Profile = () => {
               <div className="rounded-xl border-2 border-gray-200 p-6">
                 <div className="mb-3 flex items-center justify-between">
                   <p className="font-semibold text-gray-900">Home</p>
-                  <span className="inline-block rounded-full bg-black px-3 py-1 text-xs font-semibold text-white">Default</span>
+                  <span className="inline-block rounded-full bg-black px-3 py-1 text-xs font-semibold text-white">
+                    Default
+                  </span>
                 </div>
                 <p className="text-sm text-gray-600">
-                  {profileData.address}, {profileData.city}, {profileData.state} {profileData.zipCode}
+                  {profileData.address}, {profileData.city}, {profileData.state}{" "}
+                  {profileData.zipCode}
                 </p>
-                <p className="mt-1 text-sm text-gray-600">{profileData.country}</p>
+                <p className="mt-1 text-sm text-gray-600">
+                  {profileData.country}
+                </p>
                 <div className="mt-4 flex gap-2">
-                  <button className="text-sm font-semibold text-black hover:underline">Edit</button>
-                  <button className="text-sm font-semibold text-red-600 hover:underline">Delete</button>
+                  <button className="text-sm font-semibold text-black hover:underline">
+                    Edit
+                  </button>
+                  <button className="text-sm font-semibold text-red-600 hover:underline">
+                    Delete
+                  </button>
                 </div>
               </div>
             </div>
