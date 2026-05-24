@@ -79,7 +79,12 @@ const Navbar = () => {
                   >
                     Orders
                   </Link>
-                  <p className="cursor-pointer hover:text-black">Logout</p>
+                  <Link
+                    to="/logout"
+                    className="cursor-pointer hover:text-black block text-red-600 font-semibold border-t pt-2"
+                  >
+                    Logout
+                  </Link>
                 </div>
               </div>
             </div>
