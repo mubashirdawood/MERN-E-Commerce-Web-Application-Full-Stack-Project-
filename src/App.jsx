@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Product from "./pages/Product";
 import PlaceOrder from "./pages/PlaceOrder";
 import Profile from "./pages/Profile";
+import Logout from "./pages/Logout";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SearchBar from "./components/SeachBar";
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="product/:productId" element={<Product />}></Route>
         <Route path="placeorder" element={<PlaceOrder />}></Route>
         <Route path="profile" element={<Profile />}></Route>
+        <Route path="logout" element={<Logout />}></Route>
       </Routes>
       <Footer></Footer>
     </div>
