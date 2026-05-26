@@ -8,9 +8,9 @@ const Logout = () => {
 
   const handleLogout = () => {
     setIsLoggingOut(true);
-    // Simulate logout process
+    // Simulate logout process........
     setTimeout(() => {
-      // Clear user data, tokens, etc.
+      // Clear user data, tokens, etc.,,,,,,,,,,,,,,,,,,,,,,
       localStorage.clear();
       sessionStorage.clear();
       navigate("/");
