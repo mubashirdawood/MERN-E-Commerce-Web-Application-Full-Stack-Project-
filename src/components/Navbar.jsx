@@ -10,8 +10,8 @@ const Navbar = () => {
       "px-4 py-2 rounded-full transition-all duration-200",
       "text-sm font-medium",
       isActive
-        ? "bg-black text-white shadow-sm"
-        : "text-gray-700 hover:bg-white hover:shadow-sm",
+        ? "bg-linear-to-r from-blue-600 to-cyan-600 text-white shadow-md"
+        : "text-blue-700 hover:bg-blue-50 hover:shadow-sm",
     ].join(" ");
 
   const [visible, setvisible] = useState(false);
@@ -20,14 +20,14 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="sticky top-0 z-50 py-5 bg-white shadow-md rounded-b-3xl">
+      <div className="sticky top-0 z-50 py-5 bg-linear-to-r from-blue-50 to-cyan-50 shadow-md rounded-b-3xl border-b-2 border-blue-200">
         <div className="flex items-center justify-between font-medium px-4 sm:px-6">
           <Link to="/">
             <img src={assets.logo} className="w-28 sm:w-36" alt="Logo" />
           </Link>
 
           <div className="hidden rounded-full sm:flex items-center justify-center flex-1 px-6">
-            <ul className="flex items-center gap-4 rounded-full border-2 border-gray-400 bg-white/70 backdrop-blur-sm shadow-lg px-4 py-2">
+            <ul className="flex items-center gap-4 rounded-full border-2 border-cyan-300 bg-white/70 backdrop-blur-sm shadow-lg px-4 py-2">
               <li>
                 <NavLink to="/" className={navLinkClass} end>
                   Home
@@ -63,25 +63,25 @@ const Navbar = () => {
               <img
                 src={assets.profile_icon}
                 alt="Profile"
-                className="w-5 cursor-pointer"
+                className="w-5 cursor-pointer hover:opacity-70 transition-opacity"
               />
-              <div className="group-hover:block hidden absolute right-0 text-gray-500 bg-gray-100 shadow-lg p-4 rounded-md z-50">
+              <div className="group-hover:block hidden absolute right-0 text-cyan-700 bg-cyan-50 shadow-lg p-4 rounded-xl z-50 border border-cyan-200">
                 <div className="flex flex-col gap-2 w-36 py-3">
                   <Link
                     to="/profile"
-                    className="cursor-pointer hover:text-black block"
+                    className="cursor-pointer hover:text-blue-600 block font-medium"
                   >
                     My Profile
                   </Link>
                   <Link
                     to="/order"
-                    className="cursor-pointer hover:text-black block"
+                    className="cursor-pointer hover:text-blue-600 block font-medium"
                   >
                     Orders
                   </Link>
                   <Link
                     to="/logout"
-                    className="cursor-pointer hover:text-black block text-red-600 font-semibold border-t pt-2"
+                    className="cursor-pointer hover:text-red-600 block text-red-600 font-semibold border-t border-cyan-200 pt-2"
                   >
                     Logout
                   </Link>
@@ -93,9 +93,9 @@ const Navbar = () => {
               <img
                 src={assets.cart_icon}
                 alt="Cart"
-                className="w-5 cursor-pointer"
+                className="w-5 cursor-pointer hover:opacity-70 transition-opacity"
               />
-              <p className="absolute -bottom-1 -right-2 w-4 text-center leading-4 aspect-square rounded-full text-[8px] text-white bg-black">
+              <p className="absolute -bottom-1 -right-2 w-4 text-center leading-4 aspect-square rounded-full text-[8px] text-white bg-linear-to-r from-blue-600 to-cyan-600">
                 10
               </p>
             </Link>
@@ -113,35 +113,35 @@ const Navbar = () => {
 
         {/* Mobile Sidebar */}
         <div
-          className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 ${
+          className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 ${
             visible ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
           onClick={() => setvisible(false)}
         ></div>
         <div
-          className={`fixed top-0 right-0 bottom-0 z-50 bg-white overflow-hidden transition-transform duration-300 transform ${
+          className={`fixed top-0 right-0 bottom-0 z-50 bg-linear-to-b from-blue-50 to-cyan-50 overflow-hidden transition-transform duration-300 transform ${
             visible ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="flex flex-col text-gray-700 h-full">
+          <div className="flex flex-col text-blue-700 h-full">
             <div
               onClick={() => {
                 setvisible(false);
               }}
-              className="flex items-center cursor-pointer gap-4 p-4 border-b"
+              className="flex items-center cursor-pointer gap-4 p-4 border-b border-blue-200"
             >
               <img
                 className="h-4 rotate-180"
                 src={assets.dropdown_icon}
                 alt="Close"
               />
-              <p>Close</p>
+              <p className="font-semibold text-blue-900">Close</p>
             </div>
             <NavLink
               onClick={() => {
                 setvisible(false);
               }}
-              className="py-3 pl-6 border-b"
+              className="py-3 pl-6 border-b border-blue-200 hover:bg-blue-100 transition-colors font-medium"
               to="/"
               end
             >
@@ -151,7 +151,7 @@ const Navbar = () => {
               onClick={() => {
                 setvisible(false);
               }}
-              className="py-3 pl-6 border-b"
+              className="py-3 pl-6 border-b border-blue-200 hover:bg-blue-100 transition-colors font-medium"
               to="/collections"
             >
               Collections
@@ -160,7 +160,7 @@ const Navbar = () => {
               onClick={() => {
                 setvisible(false);
               }}
-              className="py-3 pl-6 border-b"
+              className="py-3 pl-6 border-b border-blue-200 hover:bg-blue-100 transition-colors font-medium"
               to="/contact"
             >
               Contact
@@ -169,7 +169,7 @@ const Navbar = () => {
               onClick={() => {
                 setvisible(false);
               }}
-              className="py-3 pl-6 border-b"
+              className="py-3 pl-6 border-b border-blue-200 hover:bg-blue-100 transition-colors font-medium"
               to="/about"
             >
               About
