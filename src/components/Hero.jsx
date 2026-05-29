@@ -7,7 +7,7 @@ const Hero = () => {
         <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-blue-50 via-teal-50 to-cyan-50" />
 
         <div className="relative grid grid-cols-1 sm:grid-cols-2 items-stretch">
-      {/* hero left */}
+          {/* hero left */}
           <div className="flex items-center px-6 py-10 sm:px-10 sm:py-14">
             <div className="max-w-xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300 bg-cyan-50/70 px-3 py-1 text-xs font-medium text-cyan-700 backdrop-blur">
@@ -20,7 +20,8 @@ const Hero = () => {
               </h1>
 
               <p className="mt-3 text-sm text-blue-700 sm:text-base">
-                Discover new-season essentials and trending picks, curated for you.
+                Discover new-season essentials and trending picks, curated for
+                you.
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
