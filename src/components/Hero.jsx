@@ -39,7 +39,7 @@ const Hero = () => {
           <div className="relative h-72 sm:h-full">
             <img
               src={assets.hero_img}
-              className="h-full w-full object-cover"
+              className="h-full w-full rounded-2xl object-cover"
               alt="Latest arrivals"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/40" />
