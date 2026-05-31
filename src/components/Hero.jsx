@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { assets } from "../assets/assets";
 const Hero = () => {
   return (
@@ -28,9 +29,9 @@ const Hero = () => {
                 <button className="rounded-full bg-linear-to-r from-blue-600 to-cyan-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:shadow-cyan-500/50 active:scale-[0.99]">
                   Shop now
                 </button>
-                <button className="rounded-full border-2 border-cyan-300 bg-cyan-50/70 px-6 py-3 text-sm font-semibold text-cyan-700 shadow-sm transition hover:bg-cyan-100">
+                <Link to="/collections" className="rounded-full border-2 border-cyan-300 bg-cyan-50/70 px-6 py-3 text-sm font-semibold text-cyan-700 shadow-sm transition hover:bg-cyan-100 inline-block">
                   View collection
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -42,7 +43,7 @@ const Hero = () => {
               className="h-full w-full rounded-2xl object-cover"
               alt="Latest arrivals"
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/40" />
+            <div className="pointer-events-none absolute inset-0 bg-linear-to-l from-transparent via-transparent to-white/40" />
           </div>
         </div>
       </div>
