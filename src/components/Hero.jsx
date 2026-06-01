@@ -26,9 +26,9 @@ const Hero = () => {
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
-                <button className="rounded-full bg-linear-to-r from-blue-600 to-cyan-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:shadow-cyan-500/50 active:scale-[0.99]">
+                <Link to='/collections' className="rounded-full bg-linear-to-r from-blue-600 to-cyan-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:shadow-cyan-500/50 active:scale-[0.99]">
                   Shop now
-                </button>
+                </Link>
                 <Link to="/collections" className="rounded-full border-2 border-cyan-300 bg-cyan-50/70 px-6 py-3 text-sm font-semibold text-cyan-700 shadow-sm transition hover:bg-cyan-100 inline-block">
                   View collection
                 </Link>
