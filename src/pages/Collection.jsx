@@ -79,8 +79,8 @@ const Collection = () => {
   }, [sortType]);
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-blue-50 via-cyan-50 to-teal-50 pt-10 pb-20">
-      <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 px-4">
+    <div className="min-h-screen bg-linear-to-b from-blue-50 via-cyan-50 to-teal-50 pt-10 pb-20 -mx-4 sm:-mx-[5vw] md:-mx-[6vw] lg:-mx-[9vv]">
+      <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 px-0">
         {/* Filter Sidebar */}
         <div className="w-full sm:w-64">
           {/* Filter Toggle Button */}
