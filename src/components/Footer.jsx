@@ -4,7 +4,7 @@ import { assets } from "../assets/assets";
 
 const Footer = () => {
   return (
-    <div className="bg-linear-to-b from-blue-50 to-cyan-50 border-t-2 border-blue-200">
+    <div className="bg-linear-to-b from-blue-50 to-cyan-50 border-t-2 border-blue-200 -mx-4 sm:-mx-[5vw] md:-mx-[7vw] lg:-mx-[9vv]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
