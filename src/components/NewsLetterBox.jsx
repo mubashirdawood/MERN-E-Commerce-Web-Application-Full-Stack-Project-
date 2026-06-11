@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NewsLetterBox = () => {
   const [email, setEmail] = useState("");
@@ -16,59 +17,102 @@ const NewsLetterBox = () => {
   return (
     <div className="my-20">
       {/* Main Newsletter Card */}
-      <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-blue-600 via-cyan-500 to-teal-500 px-6 py-16 sm:px-12 sm:py-20 shadow-2xl">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="relative overflow-hidden rounded-3xl bg-linear-to-br from-blue-600 via-cyan-500 to-teal-500 px-6 py-16 sm:px-12 sm:py-20 shadow-2xl"
+      >
         {/* Decorative background elements */}
-        <div className="pointer-events-none absolute -top-20 -right-20 h-40 w-40 rounded-full bg-white/10 blur-3xl"></div>
-        <div className="pointer-events-none absolute -bottom-20 -left-20 h-40 w-40 rounded-full bg-white/10 blur-3xl"></div>
+        <motion.div 
+          animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="pointer-events-none absolute -top-20 -right-20 h-40 w-40 rounded-full bg-white/10 blur-3xl"
+        ></motion.div>
+        <motion.div 
+          animate={{ scale: [1, 1.1, 1], rotate: [0, -90, 0] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="pointer-events-none absolute -bottom-20 -left-20 h-40 w-40 rounded-full bg-white/10 blur-3xl"
+        ></motion.div>
 
         <div className="relative z-10">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/20 px-4 py-2 mb-6 backdrop-blur-sm">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/20 px-4 py-2 mb-6 backdrop-blur-sm"
+          >
             <span className="h-2 w-2 rounded-full bg-white animate-pulse"></span>
             <span className="text-xs font-semibold text-white">
               EXCLUSIVE OFFER
             </span>
-          </div>
+          </motion.div>
 
           {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight"
+          >
             Get 10% Off Your{" "}
             <span className="bg-linear-to-r from-yellow-200 to-yellow-100 bg-clip-text text-transparent">
               First Order
             </span>
-          </h2>
+          </motion.h2>
 
           {/* Description */}
-          <p className="text-lg text-blue-50 mb-8 max-w-2xl">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="text-lg text-blue-50 mb-8 max-w-2xl"
+          >
             Subscribe to our newsletter and be the first to know about new
             collections, exclusive deals, and special promotions. Plus, enjoy
             10% discount on your next purchase!
-          </p>
+          </motion.p>
 
           {/* Success Message */}
-          {submitted && (
-            <div className="mb-6 rounded-xl bg-green-500/20 border border-green-400 p-4 backdrop-blur-sm">
-              <div className="flex items-center gap-3">
-                <svg
-                  className="h-5 w-5 text-green-300"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="text-green-100 font-semibold">
-                  Thanks for subscribing! Check your inbox.
-                </span>
-              </div>
-            </div>
-          )}
+          <AnimatePresence>
+            {submitted && (
+              <motion.div 
+                initial={{ opacity: 0, height: 0, marginBottom: 0 }}
+                animate={{ opacity: 1, height: "auto", marginBottom: 24 }}
+                exit={{ opacity: 0, height: 0, marginBottom: 0 }}
+                className="rounded-xl bg-green-500/20 border border-green-400 p-4 backdrop-blur-sm overflow-hidden"
+              >
+                <div className="flex items-center gap-3">
+                  <svg
+                    className="h-5 w-5 text-green-300"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span className="text-green-100 font-semibold">
+                    Thanks for subscribing! Check your inbox.
+                  </span>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Subscription Form */}
-          <form
+          <motion.form
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
             onSubmit={onSubmitHandler}
             className="flex flex-col sm:flex-row gap-3 max-w-md"
           >
@@ -78,7 +122,7 @@ const NewsLetterBox = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="w-full rounded-xl px-5 py-4 text-gray-900 placeholder-gray-500 outline-none focus:ring-2 focus:ring-yellow-300 transition-all"
+                className="w-full rounded-xl px-5 py-4 text-gray-900 placeholder-gray-500 outline-none focus:ring-2 focus:ring-yellow-300 transition-all font-medium"
                 required
               />
               <svg
@@ -92,16 +136,22 @@ const NewsLetterBox = () => {
             </div>
             <button
               type="submit"
-              className="rounded-xl bg-linear-to-r from-yellow-400 to-yellow-300 px-8 py-4 font-semibold text-blue-900 hover:shadow-lg hover:shadow-yellow-400/50 transition-all active:scale-95 whitespace-nowrap"
+              className="rounded-xl bg-linear-to-r from-yellow-400 to-yellow-300 px-8 py-4 font-bold text-blue-900 hover:shadow-lg hover:shadow-yellow-400/50 transition-all active:scale-95 whitespace-nowrap"
             >
               Subscribe
             </button>
-          </form>
+          </motion.form>
 
           {/* Trust indicators */}
-          <div className="mt-10 flex flex-col sm:flex-row gap-8 pt-8 border-t border-white/20">
-            <div className="flex items-center gap-3">
-              <div className="rounded-full bg-white/20 p-3 backdrop-blur-sm">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.8 }}
+            className="mt-10 flex flex-col sm:flex-row gap-8 pt-8 border-t border-white/20"
+          >
+            <div className="flex items-center gap-3 group">
+              <div className="rounded-full bg-white/20 p-3 backdrop-blur-sm group-hover:bg-white/30 transition-colors">
                 <svg
                   className="h-5 w-5 text-white"
                   fill="currentColor"
@@ -117,8 +167,8 @@ const NewsLetterBox = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="rounded-full bg-white/20 p-3 backdrop-blur-sm">
+            <div className="flex items-center gap-3 group">
+              <div className="rounded-full bg-white/20 p-3 backdrop-blur-sm group-hover:bg-white/30 transition-colors">
                 <svg
                   className="h-5 w-5 text-white"
                   fill="currentColor"
@@ -137,9 +187,9 @@ const NewsLetterBox = () => {
                 <p className="text-xs text-blue-100">Unsubscribe anytime</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

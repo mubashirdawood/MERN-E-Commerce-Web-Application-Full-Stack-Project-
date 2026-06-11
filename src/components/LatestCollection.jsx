@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { ShopContext } from "../context/ShopContext.jsx";
+import { motion } from "framer-motion";
 import Title from "./Title";
 import ProductItem from "./ProductItem";
 
@@ -17,10 +18,16 @@ const LatestCollection = () => {
     <div className="my-20">
       <div className="py-10 text-center">
         <Title text1={"LATEST"} text2={"COLLECTION"} />
-        <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-500 max-w-2xl mt-4">
+        <motion.p 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-500 max-w-2xl mt-4"
+        >
           Explore our newest arrivals, curated with the latest trends and styles in mind. 
           Fresh designs that bring together quality and modern aesthetics for your everyday wardrobe.
-        </p>
+        </motion.p>
       </div>
 
       {/* Product Grid */}
