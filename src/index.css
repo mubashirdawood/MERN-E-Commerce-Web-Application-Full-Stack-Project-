@@ -1,18 +1,36 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Prata&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-a.active hr{
-    background-color: #000;
-    display: block;
+@theme {
+  --font-prata: "Prata", serif;
+  --font-roboto: "Roboto", sans-serif;
+}
+
+@layer base {
+  * {
+    font-family: var(--font-roboto);
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .glass {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
 }
 
 .prata-regular {
-  font-family: "Prata", serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: var(--font-prata);
 }
-*{
-    font-family: 'Roboto', sans-serif;
+
+a.active hr{
+    background-color: #000;
+    display: block;
 }
 
  ::-webkit-scrollbar {
@@ -24,5 +42,4 @@ a.active hr{
     background-color: #000;
     color: aliceblue;
   }
-  
 }
