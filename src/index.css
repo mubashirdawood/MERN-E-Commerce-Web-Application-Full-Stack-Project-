@@ -43,3 +43,12 @@ a.active hr{
     color: aliceblue;
   }
 }
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite;
+}
