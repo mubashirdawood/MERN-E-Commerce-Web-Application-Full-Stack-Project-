@@ -29,18 +29,43 @@ const Hero = () => {
   const smoothBtnX = useSpring(btnX, springConfig);
   const smoothBtnY = useSpring(btnY, springConfig);
 
+  const containerRect = useRef(null);
+  const buttonRect = useRef(null);
+
+  useEffect(() => {
+    const updateRects = () => {
+      if (containerRef.current) {
+        containerRect.current = containerRef.current.getBoundingClientRect();
+      }
+      if (buttonRef.current) {
+        buttonRect.current = buttonRef.current.getBoundingClientRect();
+      }
+    };
+
+    updateRects();
+    window.addEventListener("resize", updateRects);
+    window.addEventListener("scroll", updateRects);
+
+    return () => {
+      window.removeEventListener("resize", updateRects);
+      window.removeEventListener("scroll", updateRects);
+    };
+  }, []);
+
   const handleMouseMove = (e) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    if (!containerRect.current) return;
+    
+    const { left, top, width, height } = containerRect.current;
+    const x = (e.clientX - left) / width - 0.5;
+    const y = (e.clientY - top) / height - 0.5;
+    
     mouseX.set(x);
     mouseY.set(y);
 
-    if (buttonRef.current) {
-        const btnRect = buttonRef.current.getBoundingClientRect();
-        const btnCenterX = btnRect.left + btnRect.width / 2;
-        const btnCenterY = btnRect.top + btnRect.height / 2;
+    if (buttonRect.current) {
+        const { left: btnLeft, top: btnTop, width: btnWidth, height: btnHeight } = buttonRect.current;
+        const btnCenterX = btnLeft + btnWidth / 2;
+        const btnCenterY = btnTop + btnHeight / 2;
         const dist = Math.hypot(e.clientX - btnCenterX, e.clientY - btnCenterY);
         
         if (dist < 100) {
@@ -75,11 +100,10 @@ const Hero = () => {
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0, filter: "blur(5px)" },
+    hidden: { y: 20, opacity: 0 }, // Removed blur filter as it's heavy
     visible: {
       y: 0,
       opacity: 1,
-      filter: "blur(0px)",
       transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
     },
   };
@@ -95,7 +119,7 @@ const Hero = () => {
         ref={containerRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+        style={{ rotateX, rotateY, transformStyle: "preserve-3d", willChange: "transform" }}
         initial={{ opacity: 0, y: 50, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
@@ -111,7 +135,8 @@ const Hero = () => {
               rotate: [0, 90, 0]
             }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full bg-blue-400/10 blur-[120px]"
+            style={{ willChange: "transform" }}
+            className="absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full bg-blue-400/10 blur-[100px]"
           />
           <motion.div 
             animate={{ 
@@ -121,7 +146,8 @@ const Hero = () => {
               rotate: [0, -90, 0]
             }}
             transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            className="absolute -bottom-32 -right-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[120px]"
+            style={{ willChange: "transform" }}
+            className="absolute -bottom-32 -right-32 h-[500px] w-[500px] rounded-full bg-cyan-400/10 blur-[100px]"
           />
           <motion.div 
             animate={{ 
@@ -178,7 +204,7 @@ const Hero = () => {
               <motion.div variants={itemVariants} className="mt-12 flex flex-wrap items-center gap-6">
                 <motion.div
                   ref={buttonRef}
-                  style={{ x: smoothBtnX, y: smoothBtnY }}
+                  style={{ x: smoothBtnX, y: smoothBtnY, willChange: "transform" }}
                 >
                   <Link to='/collection' className="group relative flex items-center justify-center overflow-hidden rounded-full bg-slate-900 px-10 py-5 text-sm font-black text-white shadow-xl transition-all hover:shadow-blue-500/25">
                     <span className="relative z-10 tracking-widest uppercase">Start Shopping</span>
@@ -207,7 +233,7 @@ const Hero = () => {
 
           {/* hero right */}
           <motion.div 
-            style={{ x: imgX, y: imgY, transformStyle: "preserve-3d" }}
+            style={{ x: imgX, y: imgY, transformStyle: "preserve-3d", willChange: "transform" }}
             initial={{ opacity: 0, scale: 0.9, x: 100 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -227,6 +253,7 @@ const Hero = () => {
               <motion.div 
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                style={{ willChange: "transform" }}
                 className="absolute bottom-8 left-8 right-8 backdrop-blur-xl bg-white/20 border border-white/30 p-5 rounded-3xl shadow-2xl hidden lg:block overflow-hidden"
               >
                 <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full animate-[shimmer_3s_infinite]" />
