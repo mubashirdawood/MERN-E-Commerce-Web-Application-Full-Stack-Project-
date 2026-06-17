@@ -5,10 +5,10 @@ const AboutSection = () => {
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
         <div className="space-y-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-amber-600">
+          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-blue-600">
             About Us
           </p>
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-700 sm:text-4xl">
             We build modern shopping experiences for every customer.
           </h2>
     
@@ -51,12 +51,12 @@ const AboutSection = () => {
         </div>
 
         <div className="relative overflow-hidden rounded-[2rem] bg-gray-100 p-5 shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-200 via-white to-transparent opacity-90" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-yellow to-transparent opacity-90" />
           <div className="relative rounded-[1.75rem] overflow-hidden bg-white shadow-lg">
          
           </div>
           <div className="mt-6 rounded-3xl bg-black/95 p-6 text-white shadow-xl backdrop-blur-xl">
-            <p className="text-sm uppercase tracking-[0.35em] text-amber-300">
+            <p className="text-sm uppercase tracking-[0.35em] text-blue-300">
               Our promise
             </p>
             <h3 className="mt-3 text-2xl font-semibold">
